@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./src",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@modules/*": ["modules/*"],
+      "@shared/*": ["shared/*"]
+    },
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["src", "drizzle.config.ts"]
+}
