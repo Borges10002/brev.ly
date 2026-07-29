@@ -206,12 +206,26 @@ cd server
 npm test
 ```
 
-Outros comandos:
+O frontend usa Vitest, Testing Library e `jsdom`. A suíte cobre formulários,
+integração HTTP, listagem, estados assíncronos, ações e páginas:
+
+```bash
+cd web
+npm test
+```
+
+Comandos disponíveis nas duas aplicações:
 
 ```bash
 npm run test:watch  # testes em modo de observação
 npm run typecheck   # validação do TypeScript
 npm run build       # build de produção
+```
+
+No frontend, também é possível gerar o relatório de cobertura:
+
+```bash
+npm run test:coverage
 ```
 
 ## Build de produção
