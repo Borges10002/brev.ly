@@ -37,39 +37,58 @@ export function CreateLinkForm() {
   })
 
   return (
-    <section className="card form-card">
-      <h1>Novo link</h1>
-      <form onSubmit={handleSubmit((data) => mutation.mutate(data))}>
-        <label>
+    <section className="rounded-lg bg-white p-6 md:p-8">
+      <h1 className="text-lg font-bold text-gray-800">Novo link</h1>
+      <form
+        className="mt-6 grid gap-5"
+        onSubmit={handleSubmit((data) => mutation.mutate(data))}
+      >
+        <label className="grid gap-2 text-[0.6875rem] font-semibold uppercase text-gray-500">
           Link original
           <input
             type="url"
             placeholder="www.exemplo.com.br"
             aria-invalid={Boolean(errors.originalUrl)}
+            className="w-full min-w-0 rounded-md border border-gray-300 px-4 py-3.5 text-sm font-normal text-gray-800 normal-case outline-none transition focus:border-blue-base focus:ring-1 focus:ring-blue-base aria-invalid:border-danger"
             {...register('originalUrl')}
           />
-          {errors.originalUrl && <small>{errors.originalUrl.message}</small>}
+          {errors.originalUrl && (
+            <small className="text-xs font-normal normal-case text-danger">
+              {errors.originalUrl.message}
+            </small>
+          )}
         </label>
 
-        <label>
+        <label className="grid gap-2 text-[0.6875rem] font-semibold uppercase text-gray-500">
           Link encurtado
-          <div className="input-prefix">
-            <span>{env.frontendUrl.replace(/^https?:\/\//, '')}/</span>
+          <div className="flex items-center overflow-hidden rounded-md border border-gray-300 transition focus-within:border-blue-base focus-within:ring-1 focus-within:ring-blue-base">
+            <span className="whitespace-nowrap pl-4 text-sm font-normal normal-case text-gray-500">
+              {env.frontendUrl.replace(/^https?:\/\//, '')}/
+            </span>
             <input
               placeholder="brev-ly"
               aria-invalid={Boolean(errors.shortUrl)}
+              className="w-full min-w-0 border-0 px-0 py-3.5 pr-4 pl-0.5 text-sm font-normal text-gray-800 normal-case outline-none"
               {...register('shortUrl')}
             />
           </div>
-          {errors.shortUrl && <small>{errors.shortUrl.message}</small>}
+          {errors.shortUrl && (
+            <small className="text-xs font-normal normal-case text-danger">
+              {errors.shortUrl.message}
+            </small>
+          )}
         </label>
 
-        {errors.root && <p className="form-error">{errors.root.message}</p>}
-        <button className="primary-button" disabled={mutation.isPending}>
+        {errors.root && (
+          <p className="m-0 text-xs text-danger">{errors.root.message}</p>
+        )}
+        <button
+          className="min-h-12 rounded-md border-0 bg-blue-base font-semibold text-white transition hover:bg-blue-dark disabled:cursor-not-allowed disabled:opacity-55"
+          disabled={mutation.isPending}
+        >
           {mutation.isPending ? <Spinner /> : 'Salvar link'}
         </button>
       </form>
     </section>
   )
 }
-

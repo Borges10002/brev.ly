@@ -21,7 +21,7 @@ O projeto é dividido em duas aplicações independentes:
 
 | Aplicação | Responsabilidade | Tecnologias principais |
 | --- | --- | --- |
-| [`web`](./web) | Interface responsiva e experiência do usuário | React, Vite, React Query, React Hook Form e Zod |
+| [`web`](./web) | Interface responsiva e experiência do usuário | React, Vite, Tailwind CSS, React Query, React Hook Form e Zod |
 | [`server`](./server) | API, regras de negócio, banco e relatórios | Fastify, Drizzle, PostgreSQL, R2, Swagger e Vitest |
 
 ## Funcionalidades
@@ -59,7 +59,7 @@ brev.ly/
 
 ### Web
 
-O frontend é uma SPA mobile-first. As páginas apenas organizam a interface,
+O frontend é uma SPA mobile-first estilizada com Tailwind CSS. As páginas apenas organizam a interface,
 enquanto regras de formulário, chamadas HTTP e estados assíncronos ficam na
 feature `links`.
 
