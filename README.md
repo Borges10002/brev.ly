@@ -63,6 +63,17 @@ O frontend é uma SPA mobile-first estilizada com Tailwind CSS. As páginas apen
 enquanto regras de formulário, chamadas HTTP e estados assíncronos ficam na
 feature `links`.
 
+#### Melhorias do frontend
+
+- Interface modernizada com Tailwind CSS 4 e identidade visual baseada em tokens de cores e tipografia.
+- Layout mobile-first, adaptado para celulares e desktops sem perder a legibilidade dos links.
+- Formulário com validação usando React Hook Form e Zod, mensagens de erro e bloqueio durante o envio.
+- Atualização automática da listagem após criar ou excluir um link com React Query.
+- Feedback visual para carregamento, falhas, lista vazia, exportação do CSV e redirecionamento.
+- Ações rápidas para copiar, excluir e abrir links, além da exibição da quantidade de acessos.
+- Páginas dedicadas para redirecionamento, link inválido e rota não encontrada.
+- Testes automatizados de componentes, páginas, integração com a API e estados assíncronos.
+
 Rotas disponíveis:
 
 | Rota | Descrição |
